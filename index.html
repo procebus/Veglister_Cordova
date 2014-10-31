@@ -1,0 +1,131 @@
+<!doctype html>
+<html class="ui-mobile-rendering">
+<head>
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-mdpi" />
+	<meta name="msapplication-tap-highlight" content="no" />
+
+	<meta charset="utf-8">
+	<title>VegLister</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.3.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons-1.4.3.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.custom.structure.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.custom.theme.css" />
+</head>
+<body>
+	<!-- html -->
+ 
+
+	
+	
+<section id="section_listePrincipale" data-role="page" data-theme="b">
+		<header data-role="header">
+			<h3>VegLieu</h3>
+			
+		</header>
+		<article data-role="content">
+		<!--<div id="div_rechercher">
+			<input id="search" value="" placeholder="Placeholder text..." type="search">
+		</div>-->
+		<div data-role="controlgroup" data-type="horizontal" data-mini="true">
+			<a href="#section_NouveauLieu" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-plus ui-btn-b">Add</a>
+			<!--<a href="#" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-delete ui-btn-b">Delete</a>-->
+			<a href="#" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-grid ui-btn-b">More</a>
+		</div>
+			
+					<ul id="ul_listeDesLieux" data-role="listview" data-inset="true">
+						
+			
+							
+					</ul>
+			
+				
+		</article>	
+	</section>
+	<section id="section_Lieu" data-role="page" data-theme="b">
+		
+		<div data-role="header">
+       		
+			<a href="#section_listePrincipale" class="ui-btn-left" data-transition="slide" data-direction="reverse">Retour</a> 
+        <h3>
+          Détail du VegLieu
+        </h3>
+			<a href="#diag_delLieu" data-rel="popup" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-right ui-icon-delete ui-btn-b" data-transition="pop">Delete</a>
+			<input type="button" onclick="deleteLieu();" value="Supprimer" />
+			<div id="log"></div>
+     </div>
+		
+		<div data-role="content">
+			<input id="hidden_idLieu" type="text"/>
+			<ul data-role="listview"  id="ul_lieuInfos" data-theme="b" data-inset="true">
+
+			</ul>
+			 <div id="diag_delLieu" data-role="popup" 
+				  data-position-to="window" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
+				 	<div data-role="header"> <h2>Suppression</h2></div>
+					<div data-role="content">
+						<p>Confirmer la suppression du lieu</p>
+						<a id="btn_delLieu" 
+						   class="ui-shadow ui-btn ui-corner-all ui-btn-icon-right ui-icon-delete ui-btn-a">oui</a> 
+						<a id="btn_cancelDel" 
+						   class="ui-shadow ui-btn ui-corner-all ui-btn-icon-right  ui-icon-forward ui-btn-a" 
+						   data-rel="back">annuler</a>
+						</p>
+					</div>
+			</div>
+			
+		</div>
+	</section>
+	
+
+	
+	
+	<section id="section_NouveauLieu" data-role="page" data-theme="b">
+		<div data-role="header">
+        <a data-role="button" data-direction="reverse" data-rel="back" data-transition="fade" href="#" data-icon="arrow-l" data-iconpos="left">Retour</a>
+        <h3>
+          Ajout d'un vegLieu
+        </h3>
+      </div>
+		<article data-role="content">
+		<form class="" id="form">
+			<input type="text" id="nom" placeholder="nom"> <br>
+			<!--<div class="ui-field-contain">
+				<label for="select-native-fc">Native select:</label>
+				<select name="select-native-fc" id="select-native-fc">
+					<option value="small">Restaurant</option>
+					<option value="medium">Magasin</option>
+					<option value="large">Autre</option>
+				</select>
+			</div>-->
+			<input type="text" id="type" placeholder="resto, magasin, autre"> <br>
+			<input type="text" id="lieu" placeholder="lieu"><br>
+			<input type="tel" id="tel" placeholder="tel"> <br>
+			<input type="url" id="url" placeholder="url"> <br>
+			<input type="email" id="mail" placeholder="mail" /> <br>
+			
+			<textarea placeholder="commentaires" id="commentaires" ></textarea> <br>
+
+			<input type="submit" value="sauver">
+		</form>
+			
+		</article>
+	</section>
+
+	
+	
+	
+	
+	<!-- import de js-->
+	<!-- API -->
+	<!--<script src="cordova.js"></script>-->
+	<script src="assets/jquery.js"></script>
+	<script src="assets/jquery.mobile.custom.min.js"></script>
+
+	<!-- Fonctions et classes internes -->
+	<script src="js/main.js"></script>
+	<script src="js/test.js"></script>
+
+</body>
+</html>
